@@ -222,6 +222,11 @@
                                 <i class="fa fa-users"></i> <span>Users</span>
                             </a>
                         </li>
+                        <li class="{{ starts_with(Route::currentRouteName(), 'admin.billing') ? 'active' : '' }}">
+                            <a href="{{ route('admin.billing.index') }}">
+                                <i class="fa fa-credit-card" style="color: #52b788;"></i> <span>Billing & TriPay</span>
+                            </a>
+                        </li>
                         <li class="{{ in_array(Route::currentRouteName(), ['admin.settings', 'admin.settings.mail', 'admin.settings.advanced']) ? 'active' : '' }}">
                             <a href="{{ route('admin.settings') }}">
                                 <i class="fa fa-sliders"></i> <span>Settings</span>
@@ -231,6 +236,13 @@
                         <li class="{{ starts_with(Route::currentRouteName(), 'admin.settings.links') ? 'active' : '' }}">
                             <a href="{{ route('admin.settings.links') }}">
                                 <i class="fa fa-paint-brush" style="color: #BFA89E;"></i> <span>ByteNodes UI Editor</span>
+                            </a>
+                        </li>
+                        @endif
+                        @if(Route::has('admin.settings.integrations'))
+                        <li class="{{ starts_with(Route::currentRouteName(), 'admin.settings.integrations') ? 'active' : '' }}">
+                            <a href="{{ route('admin.settings.integrations') }}">
+                                <i class="fa fa-plug" style="color: #52b788;"></i> <span>API &amp; Integrations</span>
                             </a>
                         </li>
                         @endif
